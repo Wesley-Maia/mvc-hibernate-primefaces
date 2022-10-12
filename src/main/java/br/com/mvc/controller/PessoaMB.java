@@ -30,7 +30,7 @@ public class PessoaMB implements Serializable {
 
 		limpar();
 
-		return "paginas/sucesso";
+		return "null";
 	}
 	
 	private void limpar() {
