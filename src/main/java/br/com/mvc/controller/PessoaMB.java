@@ -33,6 +33,10 @@ public class PessoaMB implements Serializable {
 		return "null";
 	}
 	
+	public String goToDetails(String nome){
+	    return "paginas/sucesso?faces-redirect=true&user=" + nome;
+	}
+	
 	private void limpar() {
 		pessoa = new Pessoa();
 	}

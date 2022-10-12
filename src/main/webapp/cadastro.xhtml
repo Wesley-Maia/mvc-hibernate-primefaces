@@ -36,6 +36,11 @@
 		border="1">
 		<p:column headerText="Nome">#{p.nome}</p:column>
 		<p:column headerText="E-mail">#{p.email}</p:column>
+		<p:column headerText="Editar">
+			<h:form>
+				<h:commandButton action="#{bean.goToDetails(p.nome)}" value="Editar" />
+			</h:form>
+		</p:column>
 	</p:dataTable>
 
 </h:body>
