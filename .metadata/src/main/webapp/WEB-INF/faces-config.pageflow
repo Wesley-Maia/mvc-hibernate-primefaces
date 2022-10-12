@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf16655946825180" configfile="/mvc-hibernate-primefaces/src/main/webapp/WEB-INF/faces-config.xml"/>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf16655946825180" configfile="/mvc-hibernate-primefaces/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="cadastro.xhtml" id="pf16655955917427" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf16655955917428" path="cadastro.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="sucesso.xhtml" id="pf16655955917429" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf16655955917428" path="sucesso.xhtml"/>
+  <links id="pf16655955917428" target="pf16655955917429" source="pf16655955917427" outcome="sucesso" redirect="true"/>
+</pageflow:Pageflow>
