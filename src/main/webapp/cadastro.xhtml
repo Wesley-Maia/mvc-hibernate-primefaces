@@ -8,10 +8,13 @@
 
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Insert title here</title>
+	<h:outputStylesheet library="css" name="file.css" />
+	<title>Cadastro</title>
 </h:head>
 
 <h:body>
+	<p:graphicImage library="img" name="logo.png" width="200" />
+	
 	<h1>Cadastro de Funcionário</h1>
 
 	<p:panel header="Cadastro de Clientes">
@@ -32,11 +35,10 @@
 
 	<h1>Lista de Pessoas</h1>
 
-	<p:dataTable id="tabelaPessoa" value="#{bean.pessoas}" var="p"
-		border="1">
+	<p:dataTable id="tabelaPessoa" value="#{bean.pessoas}" var="p" border="1" >
 		<p:column headerText="Nome">#{p.nome}</p:column>
 		<p:column headerText="E-mail">#{p.email}</p:column>
-		<p:column headerText="Editar">
+		<p:column headerText="Editar" width="50">
 			<h:form>
 				<h:commandButton action="#{bean.goToDetails(p.nome)}" value="Editar" />
 			</h:form>
