@@ -14,36 +14,75 @@
 
 <h:body>
 	<p:graphicImage library="img" name="logo.png" width="200" />
-	
-	<h1>Cadastro de Funcionário</h1>
 
-	<p:panel header="Cadastro de Clientes">
-		<h:form id="form">
-			<h:panelGrid columns="2">
-				<p:outputLabel value="Nome" />
-				<p:inputText value="#{bean.pessoa.nome}" size="50" />
-
-				<p:outputLabel value="E-mail" />
-				<p:inputText value="#{bean.pessoa.email}" size="50" />
-
-				<p:outputLabel />
-				<p:commandButton value="Adicionar" action="#{bean.adicionar}"
-					update="form tabelaPessoa" />
-			</h:panelGrid>
-		</h:form>
-	</p:panel>
-
-	<h1>Lista de Pessoas</h1>
-
-	<p:dataTable id="tabelaPessoa" value="#{bean.pessoas}" var="p" border="1" >
-		<p:column headerText="Nome">#{p.nome}</p:column>
-		<p:column headerText="E-mail">#{p.email}</p:column>
-		<p:column headerText="Editar" width="50">
-			<h:form>
-				<h:commandButton action="#{bean.goToDetails(p.nome)}" value="Editar" />
-			</h:form>
+	<p:panelGrid layout="grid" columns="3"
+		columnClasses="ui-grid-col-3, ui-grid-col-6,
+							ui-grid-col-3"
+		styleClass="ui-panelgrid-blank ui-fluid"
+		style="border:0px none; background-color:transparent;">
+		<p:column>
 		</p:column>
-	</p:dataTable>
+
+		<p:column>
+			<h1>Cadastro de Funcionário</h1>
+
+			<p:panel header="Cadastro de Clientes">
+				<h:form id="form">
+					<h:panelGrid columns="2">
+						<p:outputLabel value="Nome" />
+						<p:inputText value="#{bean.pessoa.nome}" size="50" />
+
+						<p:outputLabel value="E-mail" />
+						<p:inputText value="#{bean.pessoa.email}" size="50" />
+
+						<p:outputLabel />
+						<p:commandButton value="Adicionar" action="#{bean.adicionar}"
+							update="form tabelaPessoa" />
+					</h:panelGrid>
+				</h:form>
+			</p:panel>
+		</p:column>
+
+		<p:column>
+		</p:column>
+
+	</p:panelGrid>
+
+	<p:panelGrid layout="grid" columns="3"
+		columnClasses="ui-grid-col-3, ui-grid-col-6,
+							ui-grid-col-3"
+		styleClass="ui-panelgrid-blank ui-fluid"
+		style="border:0px none; background-color:transparent;">
+		<p:column>
+		</p:column>
+
+		<p:column>
+			<h1>Lista de Pessoas</h1>
+
+			<p:dataTable id="tabelaPessoa" value="#{bean.pessoas}" var="p"
+				border="1">
+				<p:column headerText="Nome">#{p.nome}</p:column>
+				<p:column headerText="E-mail">#{p.email}</p:column>
+				<p:column headerText="Editar" width="50">
+					<h:form>
+						<h:commandButton action="#{bean.goToDetails(p.nome)}"
+							value="Editar" />
+					</h:form>
+				</p:column>
+			</p:dataTable>
+		</p:column>
+
+		<p:column>
+		</p:column>
+
+	</p:panelGrid>
+
+
+
+
+
+
+
 
 </h:body>
 </html>
