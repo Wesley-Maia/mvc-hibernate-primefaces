@@ -23,6 +23,10 @@ public class PessoaMB implements Serializable {
 
 	public String adicionar() {
 		System.out.println("Pessoa: " + pessoa.getNome());
+		
+		if (pessoa.getNome()== null || pessoa.getNome().equals("")) {
+			return "null";
+		}
 
 		if (pessoa.getNome().length() > 0) {
 			pessoas.add(pessoa);
