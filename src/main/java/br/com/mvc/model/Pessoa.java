@@ -10,6 +10,7 @@ public class Pessoa implements Serializable {
 	private Integer id;
 	private String nome;
 	private String email;
+	private String telefone;
 
 	public Integer getId() {
 		return id;
@@ -33,6 +34,14 @@ public class Pessoa implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 
 	@Override

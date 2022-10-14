@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Entrada de Texto</title>
+</h:head>
+
+<h:body>
+	<header>
+		<div style="float: left; margin-left: 10px">
+			<h:graphicImage library="img" name="banner.jpg" height="100"
+				width="200%" />
+		</div>
+
+		<div style="float: right">
+			<h:graphicImage library="img" name="primefacesTutorial.png"
+				width="80" />
+		</div>
+	</header>
+
+	<p:messages autoUpdate="true" id="img" />
+
+	<div>
+		<h:form id="form">
+			<p:panelGrid layout="grid" columns="2"
+				columnClasses="ui-grid-col-6, ui-grid-col-6"
+				styleClass="ui-panelgrid-blank ui-fluid"
+				style="border:0px none; background-color:transparent;">
+				<p:column>
+					<h1>Campos de Entrada de Texto</h1>
+
+					<p:panelGrid columns="2">
+						<p:outputLabel value="Nome" for="nome" />
+						<p:inputText id="nome" value="#{bean.pessoa.nome}" required="true"
+							requiredMessage="O nome é obrigatório" maxlength="10" size="30"
+							placeholder="Insira o nome" title="O mouse está aqui"
+							disabled="false" />
+
+						<p:outputLabel value="Telefone" for="phone" />
+						<p:inputMask id="phone" value="#{bean.pessoa.telefone}"
+							mask="(99) 9 9999-9999" validateMask="true" />
+
+						<p:commandButton value="Adicionar" action="#{bean.adicionar}"
+							update="form tablePessoa" />
+					</p:panelGrid>
+
+				</p:column>
+
+				<p:column>
+					<div class="card">
+						<p:dataTable id="tablePessoa" var="p" value="#{bean.pessoas}">
+							<p:column headerText="Code">
+								<h:outputText value="#{p.nome}" />
+							</p:column>
+
+							<p:column headerText="Name">
+								<h:outputText value="#{p.telefone}" />
+							</p:column>
+						</p:dataTable>
+					</div>
+				</p:column>
+			</p:panelGrid>
+		</h:form>
+	</div>
+
+</h:body>
+</html>
